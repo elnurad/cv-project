@@ -1,0 +1,18 @@
+
+.name {
+    display: flex;
+    gap: 1em;
+
+    
+}
+.nameAndRole{
+    line-height: 1.8em;
+}
+
+.nameAndRole, .address {
+    display: flex;
+    flex-direction: column;
+}
+label{
+    margin-top: 0.5em;
+}
