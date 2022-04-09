@@ -8,9 +8,21 @@ const Name =({ firstName, lastName,
   addressOne, handleAddressOne,
   addressTwo, handleAddressTwo,
   phoneNumber, handlePhoneNumber,
-  email, handleEmail
+  email, handleEmail, flipPersonalDetails, displayPersonalDetails
 }) => {
    return( 
+    <div>
+      {displayPersonalDetails ? 
+      <div>
+          Personal Details
+          <p>First Name: {firstName}</p>
+          <p>Last Name: {lastName}</p>
+          <p>Current Role: {currentRole}</p>
+          <p>Address: {addressOne}, {addressTwo}</p>
+          <p>Phone Number: {phoneNumber}</p>
+          <p>Email: {email}</p>
+      </div>
+      :
       <div>
            <h4>Personal Details</h4>
            <form onSubmit={e=>e.preventDefault()} className="name">
@@ -49,7 +61,11 @@ const Name =({ firstName, lastName,
 
            </div>
        </form>
-      </div>
+      </div>}
+
+        <button onClick={flipPersonalDetails}>{displayPersonalDetails ? `edit` : `save`}</button>
+        </div>
+     
     );
     
 

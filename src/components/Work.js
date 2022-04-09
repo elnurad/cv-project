@@ -5,12 +5,21 @@ const Work =({ companyName, handleCompanyName,
                location, handleLocation,
                timeFrom, handleFrom, timeTo, handleTo,
                jobDescription, handleJobDescription,
+               displayWorkInfo, flipWorkInfo
              
 
 })=> {
     return(
         <div className="work-container">
-    
+            {displayWorkInfo ? 
+            <div>
+                <p>Company Name: {companyName}</p>
+                <p>Location: {location}</p>
+                <p>From: {timeFrom}</p>
+                <p>To: {timeTo}</p>
+                <p>Description: {jobDescription}</p>
+            </div>
+              :
             <form onSubmit={(e)=>e.preventDefault()} className="work-form">
                <label>
                    Company Name:<input value={companyName} onChange={handleCompanyName} />
@@ -29,10 +38,10 @@ const Work =({ companyName, handleCompanyName,
                </label>
 
 
-            </form>
-            <button>Edit</button>
-            <button>Add</button>
-            <button>Save</button>
+            </form>}
+
+         
+            <button onClick={flipWorkInfo}>{displayWorkInfo ? 'edit' : 'save'}</button>
 
         </div>
     )

@@ -5,10 +5,21 @@ function Education({
     major, changeMajor, 
     studyFrom, studyTo, 
     changeStudyFrom, changeStudyTo,
-    degree, changeDegree
+    degree, changeDegree,
+    displayEducationSection, flipEducationSection
 }) {
     return(
         <div className="education-section">
+            {displayEducationSection ? 
+            <div>
+              School Name: {schoolName}
+              Major: {major}
+              from: {studyFrom}
+              to: {studyTo}
+              Degree: {degree}
+
+            </div>
+            :
             <form onSubmit={(e)=>e.preventDefault()} className="education-form">
             <label>
                    School Name:<input value={schoolName} onChange={changeSchoolName} />
@@ -27,8 +38,8 @@ function Education({
             </label>
 
                 
-            </form>
-
+            </form>}
+            <button onClick={flipEducationSection}>{displayEducationSection ? 'edit' : 'save'}</button>
         </div>
     )
 

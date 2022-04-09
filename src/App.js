@@ -24,6 +24,20 @@ function App() {
   const [studyTo, setStudyTo] = useState('');
   const [degree, setDegree] = useState('');
   const [skill, setSkill] = useState('');
+  const [displayPersonalDetails, setPersonalDetails] = useState(false)
+  const [displayWorkInfo, setWorkInfo] = useState(false)
+  const [displayEducationSection, setEducationSection] = useState(false)
+
+  const flipEducationSection =(e)=> {
+    setEducationSection(!displayEducationSection)
+  }
+
+  const flipWorkInfo =(e) => {
+    setWorkInfo(!displayWorkInfo)
+  };
+  const flipPersonalDetails =(e)=> {
+    setPersonalDetails(!displayPersonalDetails)
+  };
 
   const changeSkill =(e) => {
     setSkill(e.target.value);
@@ -41,7 +55,7 @@ function App() {
     setStudyFrom(e.target.value);
   };
   const changeStudyTo =(e)=> {
-    setStudyFrom(e.target.value)
+    setStudyTo(e.target.value)
   };
   const changeDegree =(e) => {
     setDegree(e.target.value);
@@ -107,7 +121,8 @@ function App() {
        addressOne={addressOne} handleAddressOne={handleAddressOne}
        addressTwo={addressTwo} handleAddressTwo={handleAddressTwo}
        phoneNumber={phoneNumber} handlePhoneNumber={handlePhoneNumber}
-       email={email} handleEmail={handleEmail}
+       email={email} handleEmail={handleEmail} 
+       displayPersonalDetails={displayPersonalDetails} flipPersonalDetails={flipPersonalDetails}
        />
        <h4>Experience</h4>
        <Work
@@ -116,6 +131,7 @@ function App() {
        timeFrom={timeFrom} handleFrom={handleFrom} 
        timeTo={timeTo} handleTo={handleTo}
        jobDescription={jobDescription} handleJobDescription={handleJobDescription}
+       displayWorkInfo={displayWorkInfo} flipWorkInfo={flipWorkInfo}
        />
        <h4>Education</h4>
        <Education 
@@ -124,6 +140,7 @@ function App() {
        studyFrom={studyFrom} studyTo={studyTo}
        changeStudyFrom={changeStudyFrom} changeStudyTo={changeStudyTo}
        degree={degree} changeDegree={changeDegree}
+       displayEducationSection={displayEducationSection} flipEducationSection={flipEducationSection}
        />
        <h4>Skills</h4>
        <Skills 
