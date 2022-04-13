@@ -1,22 +1,55 @@
-import React from 'react';
+import React, { useState} from 'react';
 
-function Education({
-    schoolName, changeSchoolName, 
-    major, changeMajor, 
-    studyFrom, studyTo, 
-    changeStudyFrom, changeStudyTo,
-    degree, changeDegree,
-    displayEducationSection, flipEducationSection
-}) {
+function Education()
+//     schoolName, changeSchoolName, 
+//     major, changeMajor, 
+//     studyFrom, studyTo, 
+//     changeStudyFrom, changeStudyTo,
+//     degree, changeDegree,
+//     displayEducationSection, flipEducationSection
+ {
+       const [schoolName, setSchoolName] = useState('');
+       const [major, setMajor] = useState('');
+       const [studyFrom, setStudyFrom] = useState('')
+       const [studyTo, setStudyTo] = useState('');
+       const [degree, setDegree] = useState('');
+       const [displayEducationSection, setEducationSection] = useState(false)
+       const [clicked, setClicked] = useState(false)
+    
+
+       const changeSchoolName = (e) => {
+              setSchoolName(e.target.value);
+            };
+          
+       const changeMajor = (e) => {
+              setMajor(e.target.value);
+            };
+       const changeStudyFrom =(e)=> {
+              setStudyFrom(e.target.value);
+            };
+       const changeStudyTo =(e)=> {
+              setStudyTo(e.target.value)
+            };
+       const changeDegree =(e) => {
+              setDegree(e.target.value);
+            };
+       const flipEducationSection =()=> {
+              setEducationSection(!displayEducationSection)
+            };
+       const handleClicked =()=>setClicked(!clicked)
+
+
+          
+          
     return(
         <div className="education-section">
             {displayEducationSection ? 
             <div>
-              School Name: {schoolName}
-              Major: {major}
-              from: {studyFrom}
-              to: {studyTo}
-              Degree: {degree}
+              <p>School Name: {schoolName}</p>
+              <p>Major: {major}</p>
+              <p>from: {studyFrom}</p>
+              <p>to: {studyTo}</p> 
+              <p>Degree: {degree}</p> 
 
             </div>
             :
@@ -40,6 +73,7 @@ function Education({
                 
             </form>}
             <button onClick={flipEducationSection}>{displayEducationSection ? 'edit' : 'save'}</button>
+            <button onClick={handleClicked}>delete</button>
         </div>
     )
 

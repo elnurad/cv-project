@@ -18,19 +18,64 @@ function App() {
   const [timeFrom, setTimeFrom] = useState('');
   const [timeTo, setTimeTo] = useState('');
   const [jobDescription, setJobDescription] = useState('');
-  const [schoolName, setSchoolName] = useState('');
-  const [major, setMajor] = useState('');
-  const [studyFrom, setStudyFrom] = useState('')
-  const [studyTo, setStudyTo] = useState('');
-  const [degree, setDegree] = useState('');
+  //education
+  // const [schoolName, setSchoolName] = useState('');
+  // const [major, setMajor] = useState('');
+  // const [studyFrom, setStudyFrom] = useState('')
+  // const [studyTo, setStudyTo] = useState('');
+  // const [degree, setDegree] = useState('');
+  
+  //array of objects for each education component
+  // const [educationInfo, setEducationInfo] = useState([
+  //   {
+  //     id: 0, 
+  //     schoolName: '',
+  //     major: '',
+  //     studyFrom: '',
+  //     studyTo: '',
+  //     degree: ''
+  //   }
+  // ]);
+
+  //
+
+  // const [schoolName, setSchoolName] = useState([]);
+
+  // const changeSchoolName = (e) => {
+  //   setSchoolName(oldSchoolArray => [...oldSchoolArray, e.target.value]);
+  // };
+
+  // const [major, setMajor] = useState('');
+  // const [studyFrom, setStudyFrom] = useState('')
+  // const [studyTo, setStudyTo] = useState('');
+  // const [degree, setDegree] = useState('');
+  
+
+  // const changeSchoolName = (e) => {
+  //   setSchoolName(e.target.value);
+  // };
+
+  // const changeMajor = (e) => {
+  //   setMajor(e.target.value);
+  // };
+  // const changeStudyFrom =(e)=> {
+  //   setStudyFrom(e.target.value);
+  // };
+  // const changeStudyTo =(e)=> {
+  //   setStudyTo(e.target.value)
+  // };
+  // const changeDegree =(e) => {
+  //   setDegree(e.target.value);
+  // }
+
   const [skill, setSkill] = useState('');
   const [displayPersonalDetails, setPersonalDetails] = useState(false)
   const [displayWorkInfo, setWorkInfo] = useState(false)
-  const [displayEducationSection, setEducationSection] = useState(false)
+  // const [displayEducationSection, setEducationSection] = useState(false)
 
-  const flipEducationSection =(e)=> {
-    setEducationSection(!displayEducationSection)
-  }
+  // const flipEducationSection =(e)=> {
+  //   setEducationSection(!displayEducationSection)
+  // }
 
   const flipWorkInfo =(e) => {
     setWorkInfo(!displayWorkInfo)
@@ -44,22 +89,22 @@ function App() {
   }
 
 
-  const changeSchoolName = (e) => {
-    setSchoolName(e.target.value);
-  };
+  // const changeSchoolName = (e) => {
+  //   setSchoolName(e.target.value);
+  // };
 
-  const changeMajor = (e) => {
-    setMajor(e.target.value);
-  };
-  const changeStudyFrom =(e)=> {
-    setStudyFrom(e.target.value);
-  };
-  const changeStudyTo =(e)=> {
-    setStudyTo(e.target.value)
-  };
-  const changeDegree =(e) => {
-    setDegree(e.target.value);
-  }
+  // const changeMajor = (e) => {
+  //   setMajor(e.target.value);
+  // };
+  // const changeStudyFrom =(e)=> {
+  //   setStudyFrom(e.target.value);
+  // };
+  // const changeStudyTo =(e)=> {
+  //   setStudyTo(e.target.value)
+  // };
+  // const changeDegree =(e) => {
+  //   setDegree(e.target.value);
+  // }
   
   const handleCompanyName = (e) => {
     setCompanyName(e.target.value)
@@ -109,7 +154,17 @@ function App() {
   const handleEmail =(e)=> {
     setEmail(e.target.value)
   }
-
+  
+  const [educationArray, setEducationArray] = useState([]);
+  // const [clickedEduItem, setClickedEduItem] = useSTate(false)
+  // const removeEduItem =()=>{
+  //   let unClickedItems = educationArray.filter((item, i)=>{
+  //     if 
+  //   })
+  // }
+  // // const deleteEduItem =()=>{
+  // //   setEducationArray(...)
+  // // }
  
   return (
     <div className="App">
@@ -134,14 +189,17 @@ function App() {
        displayWorkInfo={displayWorkInfo} flipWorkInfo={flipWorkInfo}
        />
        <h4>Education</h4>
-       <Education 
-       schoolName={schoolName} changeSchoolName={changeSchoolName}
-       major={major} changeMajor={changeMajor}
-       studyFrom={studyFrom} studyTo={studyTo}
-       changeStudyFrom={changeStudyFrom} changeStudyTo={changeStudyTo}
-       degree={degree} changeDegree={changeDegree}
-       displayEducationSection={displayEducationSection} flipEducationSection={flipEducationSection}
-       />
+       <button onClick={()=>{setEducationArray([...educationArray, <Education />])}}>add new</button>
+       {educationArray.map((eduItem, i)=><div className="eduItem" id={i} key={i}>{eduItem}</div>)}
+       
+       {/* <Education 
+      //  schoolName={schoolName} changeSchoolName={changeSchoolName}
+      //  major={major} changeMajor={changeMajor}
+      //  studyFrom={studyFrom} studyTo={studyTo}
+      //  changeStudyFrom={changeStudyFrom} changeStudyTo={changeStudyTo}
+      //  degree={degree} changeDegree={changeDegree}
+      //  displayEducationSection={displayEducationSection} flipEducationSection={flipEducationSection}
+       /> */}
        <h4>Skills</h4>
        <Skills 
        skill={skill}
