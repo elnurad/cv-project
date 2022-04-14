@@ -156,16 +156,15 @@ function App() {
   }
   
   const [educationArray, setEducationArray] = useState([]);
-  // const [clickedEduItem, setClickedEduItem] = useSTate(false)
-  // const removeEduItem =()=>{
-  //   let unClickedItems = educationArray.filter((item, i)=>{
-  //     if 
-  //   })
-  // }
-  // // const deleteEduItem =()=>{
-  // //   setEducationArray(...)
-  // // }
- 
+  
+  const [clicked, setClickedButton] = useState(false); //remove button starts out as false
+  const handleDeleteEduItem =(id)=>{
+  const newEduArray = educationArray.filter((item)=>educationArray[item] !== id)
+  
+  setEducationArray(newEduArray)
+  console.log(educationArray)
+}
+
   return (
     <div className="App">
        <div className="edit-mode">
@@ -189,17 +188,9 @@ function App() {
        displayWorkInfo={displayWorkInfo} flipWorkInfo={flipWorkInfo}
        />
        <h4>Education</h4>
-       <button onClick={()=>{setEducationArray([...educationArray, <Education />])}}>add new</button>
-       {educationArray.map((eduItem, i)=><div className="eduItem" id={i} key={i}>{eduItem}</div>)}
+       <button onClick={()=>{setEducationArray([...educationArray, <Education id={educationArray.length} handleDeleteButton={handleDeleteEduItem}/>])}}>add new</button>
+       {educationArray.map((eduItem, i)=><div className="eduItem" key={i}>{eduItem}</div>)}
        
-       {/* <Education 
-      //  schoolName={schoolName} changeSchoolName={changeSchoolName}
-      //  major={major} changeMajor={changeMajor}
-      //  studyFrom={studyFrom} studyTo={studyTo}
-      //  changeStudyFrom={changeStudyFrom} changeStudyTo={changeStudyTo}
-      //  degree={degree} changeDegree={changeDegree}
-      //  displayEducationSection={displayEducationSection} flipEducationSection={flipEducationSection}
-       /> */}
        <h4>Skills</h4>
        <Skills 
        skill={skill}

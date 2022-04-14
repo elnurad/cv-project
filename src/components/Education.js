@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 
-function Education()
+function Education(props)
 //     schoolName, changeSchoolName, 
 //     major, changeMajor, 
 //     studyFrom, studyTo, 
@@ -15,6 +15,7 @@ function Education()
        const [degree, setDegree] = useState('');
        const [displayEducationSection, setEducationSection] = useState(false)
        const [clicked, setClicked] = useState(false)
+       const [count, setCount] = useState(0)
     
 
        const changeSchoolName = (e) => {
@@ -36,13 +37,17 @@ function Education()
        const flipEducationSection =()=> {
               setEducationSection(!displayEducationSection)
             };
-       const handleClicked =()=>setClicked(!clicked)
+       // const handleClicked =()=>{
+       //        // setClicked(!clicked)
+       //        // setCount(count+1)
+       //        props.handleDeleteButton()
+       // }
 
 
           
           
     return(
-        <div className="education-section">
+        <div id={props.id} className="education-section" data-count={count}>
             {displayEducationSection ? 
             <div>
               <p>School Name: {schoolName}</p>
@@ -73,7 +78,7 @@ function Education()
                 
             </form>}
             <button onClick={flipEducationSection}>{displayEducationSection ? 'edit' : 'save'}</button>
-            <button onClick={handleClicked}>delete</button>
+            <button onClick={()=>props.handleDeleteButton(props.id)}>delete</button>
         </div>
     )
 
