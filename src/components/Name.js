@@ -1,15 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import '../styles/name.css'
 
 
-const Name =({ firstName, lastName, 
-  onChangeFirstName, onChangeLastName, 
-  currentRole, handleCurrentRole,
-  addressOne, handleAddressOne,
-  addressTwo, handleAddressTwo,
-  phoneNumber, handlePhoneNumber,
-  email, handleEmail, flipPersonalDetails, displayPersonalDetails
-}) => {
+const Name =(props) => {
+    const [firstName, setFirstName] = useState('First Name');
+    const [lastName, setLastName] = useState('Last Name');
+    const [currentRole, setCurrentRole] = useState('Current Role')
+    const [addressOne, setAddressOne] = useState('Addres Line 1');
+    const [addressTwo, setAddressTwo] = useState('Address Line 2');
+    const [phoneNumber, setPhoneNumber] = useState('508-345-2233')
+    const [email, setEmail] = useState('johnsmith@email.com')
+    const [displayPersonalDetails, setPersonalDetails] = useState(false)
+
+    const handleFirstNameOnChange =(e)=> {
+        setFirstName(e.target.value)
+      };
+    
+      const handleLastNameOnChange =(e)=> {
+        setLastName(e.target.value)
+      };
+    
+      const handleCurrentRole =(e)=> {
+        setCurrentRole(e.target.value)
+      }
+    
+      const handleAddressOne =(e)=> {
+        setAddressOne(e.target.value)
+      }
+    
+      const handleAddressTwo =(e)=> {
+        setAddressTwo(e.target.value)
+      }
+    
+      const handlePhoneNumber =(e)=> {
+        setPhoneNumber(e.target.value)
+      }
+    
+      const handleEmail =(e)=> {
+        setEmail(e.target.value)
+      }
+      const flipPersonalDetails =(e)=> {
+        setPersonalDetails(!displayPersonalDetails)
+      };
+    
    return( 
     <div>
       {displayPersonalDetails ? 
@@ -30,11 +64,11 @@ const Name =({ firstName, lastName,
              <div className="nameAndRole">
            <label>
                First Name:
-               <input value={firstName} onChange={onChangeFirstName}/>
+               <input value={firstName} onChange={handleFirstNameOnChange}/>
            </label>
            <label>
                Last Name:
-               <input value={lastName} onChange={onChangeLastName}/>
+               <input value={lastName} onChange={handleLastNameOnChange}/>
            </label>
            <label>
                Current Role:

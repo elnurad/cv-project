@@ -1,14 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/work.css'
 
-const Work =({ companyName, handleCompanyName,
-               location, handleLocation,
-               timeFrom, handleFrom, timeTo, handleTo,
-               jobDescription, handleJobDescription,
-               displayWorkInfo, flipWorkInfo
-             
+const Work =(props)=> {
 
-})=> {
+    const [companyName, setCompanyName] = useState('')
+    const [location, setLocation] = useState('');
+    const [timeFrom, setTimeFrom] = useState('');
+    const [timeTo, setTimeTo] = useState('');
+    const [jobDescription, setJobDescription] = useState('');
+    const [displayWorkInfo, setWorkInfo] = useState(false)
+
+     const handleCompanyName = (e) => {
+      setCompanyName(e.target.value)
+    };
+
+    const handleLocation = (e) => {
+      setLocation(e.target.value)
+    };
+
+    const handleFrom = (e) => {
+      setTimeFrom(e.target.value)
+    };
+
+    const handleTo = (e) => {
+      setTimeTo(e.target.value)
+    };
+
+    const handleJobDescription = (e) => {
+      setJobDescription(e.target.value)
+    }
+
+
+    const flipWorkInfo =(e) => {
+      setWorkInfo(!displayWorkInfo)
+    };
+
+
     return(
         <div className="work-container">
             {displayWorkInfo ? 
@@ -42,6 +69,7 @@ const Work =({ companyName, handleCompanyName,
 
          
             <button onClick={flipWorkInfo}>{displayWorkInfo ? 'edit' : 'save'}</button>
+            <button onClick={()=>props.handleDeleteWorkItem(props.id)}>delete</button>
 
         </div>
     )
