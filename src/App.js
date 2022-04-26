@@ -7,48 +7,36 @@ import Skills from './components/Skills'
 
 function App() {
 
-  const uniqueId =()=>{
-    return Math.floor(Math.random() * Date.now())
+ 
+  const [eduId, setEduId] = useState([]); 
+  const addEducationComp =()=> {
+    setEduId((prevState) =>[...prevState, Math.floor(Math.random() * Date.now())])
+    console.log(eduId)
   }
-  const eduId = uniqueId()
- 
-  
-  const [educationArray, setEducationArray] = useState([]);
-  const [count, setCount] = useState(0)
-  const [workArray, setWorkArray] = useState([]);
-  
- 
-//   function handleDeleteEduItem(id){
-  
-//   const newEduArray = educationArray.filter((item)=>item.id !== id)
-   
-//   setEducationArray(newEduArray)
-//   console.log(newEduArray)
-// }
 
+  const [workId, setWorkId] = useState([]);
+  const addWorkComp =()=> {
+    setWorkId((prevState) =>[...prevState, Math.floor(Math.random() * Date.now())])
+    console.log(workId)
+  }
+
+  const [skillsId, setSkillsId] = useState([]);
+  
  
-function handleDeleteEduItem(id){
-  
-  const newEduArray = educationArray.map((item)=>`item.id:${item.id}, id:${id}`)
-   
-  
-  console.log(newEduArray)
-}
 
 function handleDeleteWorkItem(id){
-  const newWorkArray = workArray.filter(item=>item.id != id)
-  console.log(newWorkArray)
+  const filteredWorkIdCopy = workId.filter(item=>item != id)
+  setWorkId(filteredWorkIdCopy)
 }
 
-// const handleDeleteEduItem =(id)=>{
-  
-//   const eduArrayToSplice = [...educationArray]
-//   const newEduArray = eduArrayToSplice.splice(id, 1)
-  
-//   setEducationArray(newEduArray)
-//   console.log(id)
-// }
+const handleDeleteEduItem =(id)=>{
+  const filteredEduIdCopy = eduId.filter(item=>item != id)
+  setEduId(filteredEduIdCopy)
 
+}
+
+const renderWorkComponents = workId.map(item => <Work id={item} key={item} handleDeleteWorkItem={handleDeleteWorkItem}/>)
+const renderEducationComponents = eduId.map((item) => <Education id={item} key={item} handleDeleteEduItem={handleDeleteEduItem}/>)
 
   return (
     <div className="App">
@@ -56,25 +44,23 @@ function handleDeleteWorkItem(id){
       <h4>Personal Details</h4>  
       <Name />
        <h4>Experience</h4>
-       <button onClick={()=>setWorkArray([...workArray, {comp: <Work id={workArray.length} handleDeleteWorkItem={handleDeleteWorkItem} />, id: workArray.length}])}>
+       <button onClick={addWorkComp}>
         add new
       </button>
-      <button onClick={()=>console.log(workArray)}>click</button>
-       {workArray.map((workItem, i)=>
-         <div key={i}>{workItem.comp}</div>
-        )}
+      <div>
+        {renderWorkComponents}
+      </div>
         
 
        <h4>Education</h4>
-       <button onClick={()=>
-        {setEducationArray([...educationArray, {comp: <Education id={eduId} handleDeleteButton={handleDeleteEduItem}/>, id: eduId}])}}>
-          add new
-        </button>
-       {educationArray.map((eduItem, i)=><div className="eduItem" key={i}>{eduItem.comp}</div>)}
-       
+     
+          <button onClick={addEducationComp}>add new</button>
+          <div>{renderEducationComponents}</div>
+     
        <h4>Skills</h4>
-       <Skills  
-       />
+       
+       <Skills />
+
         
     
        </div>

@@ -9,12 +9,12 @@ function Education(props)
        const [studyTo, setStudyTo] = useState('');
        const [degree, setDegree] = useState('');
        const [displayEducationSection, setEducationSection] = useState(false)
-       // const id = props.id()
+
       
     
-       const handleDeleteButton = () => {
+       const handleDeleteEduItem = () => {
               console.log(props.id)
-              props.handleDeleteButton(props.id)
+              props.handleDeleteEduItem(props.id)
        }
 
        const changeSchoolName = (e) => {
@@ -72,7 +72,7 @@ function Education(props)
                 
             </form>}
             <button onClick={flipEducationSection}>{displayEducationSection ? 'edit' : 'save'}</button>
-            <button onClick={handleDeleteButton}>delete</button>
+            <button onClick={handleDeleteEduItem}>delete</button>
         </div>
     )
 

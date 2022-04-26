@@ -4,14 +4,48 @@ import React, { useState } from 'react';
 function Skills() {
 
   const [skill, setSkill] = useState('');
-   const changeSkill =(e) => {
+  const [skillsArray, setSkillsArray] = useState([]);
+  // const [saveMode, setSaveMode] = useState(false)
+  const [displaySkills, flipDisplaySkills] = useState(false)
+  
+  const changeSkill =(e) => {
     setSkill(e.target.value);
   }
+
+  const addSkill =()=>{
+    setSkillsArray((prevState)=>[...prevState, skill])
+    setSkill('')
+    console.log(skillsArray)
+
+  }
+
+  const handleDisplaySkills =()=> {
+    flipDisplaySkills(!displaySkills)
+    console.log(displaySkills)
+  }
+
+  // const handleSaveButton =()=>{setFlipSaveButton(!flipSaveButton)}
+  const renderSkillsArray = skillsArray.map((item, i)=> <li key={i}>{item}<span> x</span></li>)
+
     return(
         <div className="skills-section">
-            <label>
-                   Add Skills:<input value={skill} onChange={changeSkill} />
+          {displaySkills ?  <ul>{renderSkillsArray}</ul> : 
+           <div>
+             <label>
+                   <input value={skill} onChange={changeSkill} />   
+                   
             </label>
+            <button onClick={addSkill}>add skill</button>
+            <ul>{renderSkillsArray}</ul>
+
+        
+            
+          
+            </div>
+}
+      <button onClick={handleDisplaySkills}>{displaySkills ? 'edit' : 'save'}</button>
+          
+           
 
         </div>
     )
