@@ -42,6 +42,7 @@ function Education(props)
           
     return(
         <div className="education-section">
+           
             {displayEducationSection ? 
             <div>
               <p>School Name: {schoolName}</p>
@@ -71,9 +72,12 @@ function Education(props)
 
                 
             </form>}
-            <button onClick={flipEducationSection}>{displayEducationSection ? 'edit' : 'save'}</button>
-            <button onClick={handleDeleteEduItem}>delete</button>
+            <button onClick={flipEducationSection}>{displayEducationSection ?<i class="fa fa-edit"></i> : 'save'}</button>
+            <span onClick={handleDeleteEduItem}><i className="fa fa-remove"></i></span>
+          
         </div>
+        
+            
     )
 
 }

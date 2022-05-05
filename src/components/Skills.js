@@ -12,8 +12,14 @@ function Skills() {
     setSkill(e.target.value);
   }
 
+  const removeSkill =(id)=>{
+    const newArray = skillsArray.filter((item)=>item.id != id)
+    setSkillsArray(newArray)
+    
+  }
+
   const addSkill =()=>{
-    setSkillsArray((prevState)=>[...prevState, skill])
+    setSkillsArray((prevState)=>[...prevState, {'skill': skill, 'id': skillsArray.length}])
     setSkill('')
     console.log(skillsArray)
 
@@ -24,8 +30,8 @@ function Skills() {
     console.log(displaySkills)
   }
 
-  // const handleSaveButton =()=>{setFlipSaveButton(!flipSaveButton)}
-  const renderSkillsArray = skillsArray.map((item, i)=> <li key={i}>{item}<span> x</span></li>)
+  
+  const renderSkillsArray = skillsArray.map((item, i)=> <li key={i}>{item.skill}<span onClick={()=>removeSkill(item.id)}> delete</span></li>)
 
     return(
         <div className="skills-section">

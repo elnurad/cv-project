@@ -1,11 +1,12 @@
-
+/* 
 .name {
     display: flex;
     gap: 1em;
+  
 
     
 }
-.nameAndRole{
+.nameAndRole, .address {
     line-height: 1.8em;
 }
 
@@ -13,6 +14,6 @@
     display: flex;
     flex-direction: column;
 }
-label{
+/* label{
     margin-top: 0.5em;
-}
+} */

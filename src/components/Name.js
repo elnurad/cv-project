@@ -7,8 +7,7 @@ const Name =(props) => {
     const [firstName, setFirstName] = useState('First Name');
     const [lastName, setLastName] = useState('Last Name');
     const [currentRole, setCurrentRole] = useState('Current Role')
-    const [addressOne, setAddressOne] = useState('Addres Line 1');
-    const [addressTwo, setAddressTwo] = useState('Address Line 2');
+    const [address, setAddress] = useState('Addres Line 1');
     const [phoneNumber, setPhoneNumber] = useState('508-345-2233')
     const [email, setEmail] = useState('johnsmith@email.com')
     const [displayPersonalDetails, setPersonalDetails] = useState(false)
@@ -25,12 +24,8 @@ const Name =(props) => {
         setCurrentRole(e.target.value)
       }
     
-      const handleAddressOne =(e)=> {
-        setAddressOne(e.target.value)
-      }
-    
-      const handleAddressTwo =(e)=> {
-        setAddressTwo(e.target.value)
+      const handleAddress =(e)=> {
+        setAddress(e.target.value)
       }
     
       const handlePhoneNumber =(e)=> {
@@ -52,7 +47,7 @@ const Name =(props) => {
           <p>First Name: {firstName}</p>
           <p>Last Name: {lastName}</p>
           <p>Current Role: {currentRole}</p>
-          <p>Address: {addressOne}, {addressTwo}</p>
+          <p>Address: {address}</p>
           <p>Phone Number: {phoneNumber}</p>
           <p>Email: {email}</p>
       </div>
@@ -78,11 +73,7 @@ const Name =(props) => {
            <div className="address">
            <label>
                Address 1:
-               <input value={addressOne} onChange={handleAddressOne}/>
-           </label>
-           <label>
-               Address 2:
-               <input value={addressTwo} onChange={handleAddressTwo}/>
+               <input value={address} onChange={handleAddress}/>
            </label>
            <label>
                Phone Number:

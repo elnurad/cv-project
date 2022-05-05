@@ -9,6 +9,7 @@ function App() {
 
  
   const [eduId, setEduId] = useState([]); 
+ 
   const addEducationComp =()=> {
     setEduId((prevState) =>[...prevState, Math.floor(Math.random() * Date.now())])
     console.log(eduId)
@@ -36,12 +37,11 @@ const handleDeleteEduItem =(id)=>{
 }
 
 const renderWorkComponents = workId.map(item => <Work id={item} key={item} handleDeleteWorkItem={handleDeleteWorkItem}/>)
-const renderEducationComponents = eduId.map((item) => <Education id={item} key={item} handleDeleteEduItem={handleDeleteEduItem}/>)
+const renderEducationComponents = eduId.map((item) => <Education id={item} key={item} handleDeleteEduItem={handleDeleteEduItem} />)
 
   return (
     <div className="App">
-       <div className="edit-mode">
-      <h4>Personal Details</h4>  
+       <div className="edit-mode"> 
       <Name />
        <h4>Experience</h4>
        <button onClick={addWorkComp}>

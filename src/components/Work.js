@@ -5,6 +5,7 @@ const Work =(props)=> {
 
     const [companyName, setCompanyName] = useState('')
     const [location, setLocation] = useState('');
+    const [position, setPosition] = useState('');
     const [timeFrom, setTimeFrom] = useState('');
     const [timeTo, setTimeTo] = useState('');
     const [jobDescription, setJobDescription] = useState('');
@@ -17,6 +18,10 @@ const Work =(props)=> {
     const handleLocation = (e) => {
       setLocation(e.target.value)
     };
+
+    const handlePosition =(e)=> {
+      setPosition(e.target.value);
+    }
 
     const handleFrom = (e) => {
       setTimeFrom(e.target.value)
@@ -42,6 +47,7 @@ const Work =(props)=> {
             <div>
                 <p>Company Name: {companyName}</p>
                 <p>Location: {location}</p>
+                <p>Position: {position}</p>
                 <p>From: {timeFrom}</p>
                 <p>To: {timeTo}</p>
                 <p>Description: {jobDescription}</p>
@@ -53,6 +59,9 @@ const Work =(props)=> {
                </label>
                <label>
                    Location:<input value={location} onChange={handleLocation} />
+               </label>
+               <label>
+                   Position:<input value={position} onChange={handlePosition} />
                </label>
                <label>
                    From:<input value={timeFrom} onChange={handleFrom} type="date" />
