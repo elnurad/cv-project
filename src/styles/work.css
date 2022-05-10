@@ -1,0 +1,10 @@
+.work-container {
+    /* display: flex;
+    flex-direction: column; */
+
+}
+
+
+.company, .work-duration {
+    display: flex;
+}
