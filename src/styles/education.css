@@ -1,4 +1,11 @@
 .school-duration {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
     
+}
+
+.school-duration input {
+    width: 15em;
 }

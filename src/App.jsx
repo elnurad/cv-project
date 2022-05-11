@@ -50,17 +50,15 @@ function App() {
         <h4>Personal Details</h4>
         <Name />
         <h4>Experience</h4>
-        <button onClick={addWorkComp}>
-          add new
-        </button>
         <div>
           {renderWorkComponents}
         </div>
-
+        <button onClick={addWorkComp}>
+          add new
+        </button>
         <h4>Education</h4>
-
-        <button onClick={addEducationComp}>add new</button>
         <div>{renderEducationComponents}</div>
+        <button onClick={addEducationComp}>add new</button>
 
         <h4>Skills</h4>
 

@@ -1,12 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Barlow+Condensed:wght@300;600&family=La+Belle+Aurore&family=PT+Sans+Narrow&family=Raleway&family=Roboto+Flex:opsz,wght@8..144,100&family=Skranji&display=swap');
+
 .App {
     display: flex;
-    flex-direction: row;
+  
     margin-right: 15em;
     margin-left: 15em;
     margin-top: 5em;
     margin-bottom: 5em;
     border: 1px solid grey;
-    /* margin: auto 0; */
-   
     text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+input {
+    width: 20em;
+    margin: 0.3em 0 1em 0;
+    height: 1.5em;
+    
 }

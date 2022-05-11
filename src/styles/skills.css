@@ -1,13 +1,5 @@
-
-.name {
+.skills-section {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4em;   
-    
-
-}
-
-input {
-    width: 20em;
 }

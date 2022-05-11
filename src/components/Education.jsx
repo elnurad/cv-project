@@ -82,26 +82,26 @@ function Education({ id, handleDeleteEduItem }) {
                 <input value={major} onChange={changeMajor} />
               </div>
             </label>
-            <div className="school-duration">
-              <label>
-                From:
-                <div className="education-input">
-                  <input value={studyFrom} onChange={changeStudyFrom} />
-                </div>
-              </label>
-              <label>
-                To:
-                <div className="education-input">
-                  <input value={studyTo} onChange={changeStudyTo} />
-                </div>
-              </label>
-            </div>
             <label>
               Degree:
               <div className="degree-input">
                 <input value={degree} onChange={changeDegree} />
               </div>
             </label>
+            <div className="school-duration">
+              <label>
+                From:
+                <div className="education-input">
+                  <input type="date" value={studyFrom} onChange={changeStudyFrom} />
+                </div>
+              </label>
+              <label>
+                To:
+                <div className="education-input">
+                  <input type="date" value={studyTo} onChange={changeStudyTo} />
+                </div>
+              </label>
+            </div>
           </form>
         )}
       <button onClick={flipEducationSection}>{displayEducationSection ? <i className="fa fa-edit" /> : 'save'}</button>

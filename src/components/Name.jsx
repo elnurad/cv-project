@@ -44,7 +44,7 @@ function Name() {
     <div>
       {displayPersonalDetails
         ? (
-          <div>
+          <div className="saved-personal-details">
 
             <p>
               First Name:
@@ -87,13 +87,13 @@ function Name() {
                 <label>
 
                   Last Name:
-                  <div className="nameInput">
+                  <div className="name-input">
                     <input value={lastName} onChange={handleLastNameOnChange} />
                   </div>
                 </label>
                 <label>
                   Current Role:
-                  <div className="nameInput">
+                  <div className="name-input">
                     <input value={currentRole} onChange={handleCurrentRole} />
                   </div>
                 </label>
@@ -101,19 +101,19 @@ function Name() {
               <div className="address">
                 <label>
                   Address 1:
-                  <div className="nameInput">
+                  <div className="name-iInput">
                     <input value={address} onChange={handleAddress} />
                   </div>
                 </label>
                 <label>
                   Phone Number:
-                  <div className="nameInput">
+                  <div className="name-input">
                     <input value={phoneNumber} onChange={handlePhoneNumber} />
                   </div>
                 </label>
                 <label>
-                  <div className="nameInput">
-                    E-mail:
+                  E-mail:
+                  <div className="name-input">
                     <input value={email} onChange={handleEmail} />
                   </div>
                 </label>

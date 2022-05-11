@@ -1,10 +1,8 @@
-.work-container {
-    /* display: flex;
-    flex-direction: column; */
-
-}
 
 
 .company, .work-duration {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
 }
