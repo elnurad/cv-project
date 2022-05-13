@@ -46,30 +46,22 @@ function Name() {
         ? (
           <div className="saved-personal-details">
 
-            <p>
-              First Name:
-              {firstName}
-            </p>
-            <p>
-              Last Name:
-              {lastName}
-            </p>
-            <p>
-              Current Role:
-              {currentRole}
-            </p>
-            <p>
-              Address:
-              {address}
-            </p>
-            <p>
-              Phone Number:
-              {phoneNumber}
-            </p>
-            <p>
-              Email:
-              {email}
-            </p>
+            <div className="saved-personal-item-title">
+              <p>First Name:</p>
+              <p>Last Name:</p>
+              <p>Current Role:</p>
+              <p>Address:</p>
+              <p>Phone Number:</p>
+              <p>Email:</p>
+            </div>
+            <div className="saved-personal-item-info">
+              <p>{firstName}</p>
+              <p>{lastName}</p>
+              <p>{currentRole}</p>
+              <p>{address}</p>
+              <p>{phoneNumber}</p>
+              <p>{email}</p>
+            </div>
           </div>
         )
         : (

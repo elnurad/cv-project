@@ -1,8 +1,34 @@
+.work-container {
+    margin-top: 1.5em;
 
+}
 
 .company, .work-duration {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 4em;
+}
+
+.saved-work-details {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+    line-height: 0.4em;
+    margin-left: 3em;
+}
+.saved-work-item-title {
+    text-align: left;
+    font-weight: bold;
+}
+.saved-work-item-info {
+    text-align: left;
+
+}
+.job-description {
+    text-align: left;
+    margin-left: 3em;
+}
+.job-description-title {
+    font-weight: bold;
 }

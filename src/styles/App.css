@@ -1,22 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Barlow+Condensed:wght@300;600&family=La+Belle+Aurore&family=PT+Sans+Narrow&family=Raleway&family=Roboto+Flex:opsz,wght@8..144,100&family=Skranji&display=swap');
 
+body {
+    background-image: linear-gradient(to right, white, rgb(71, 71, 67)); 
+}
+
 .App {
+    background-color: white;
     display: flex;
-  
-    margin-right: 15em;
-    margin-left: 15em;
-    margin-top: 5em;
-    margin-bottom: 5em;
+    margin: 0.2em 18em 1em 18em;
+    padding-bottom: 6em;
     border: 1px solid grey;
     text-align: center;
     align-items: center;
     justify-content: center;
     font-family: 'Raleway', sans-serif;
+    border-radius: 10px;
+    
+}
+h4 {
+    font-size: 1.2rem;
+    padding: 0;
+    margin-bottom: 0;
 }
 
 input {
     width: 20em;
     margin: 0.3em 0 1em 0;
     height: 1.5em;
+    border-radius: 5px;
+    border: 1px solid grey;
     
+}
+textarea {
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+button {
+    border-radius: 5px;
+    border: 1px solid grey;
+    margin-left: 2em;
+    margin-right: 2em;
+   
+}
+.add-new {
+    margin-top: 2em;
 }

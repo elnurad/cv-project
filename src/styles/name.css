@@ -7,7 +7,20 @@
     
 
 }
+.saved-personal-details {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+    line-height: 0.4em;
+    margin-left: 3em;
+   
+}
 
-input {
-    width: 20em;
+.saved-personal-item-title {
+    text-align:left;
+    font-weight: bold;
+}
+
+.saved-personal-item-info {
+    text-align:left
 }

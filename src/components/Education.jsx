@@ -104,8 +104,8 @@ function Education({ id, handleDeleteEduItem }) {
             </div>
           </form>
         )}
-      <button onClick={flipEducationSection}>{displayEducationSection ? <i className="fa fa-edit" /> : 'save'}</button>
-      <span onClick={handleDeleteItem}><i className="fa fa-remove" /></span>
+      <button onClick={flipEducationSection}>{displayEducationSection ? 'edit' : 'save'}</button>
+      <button onClick={handleDeleteItem}>delete</button>
     </div>
   );
 }

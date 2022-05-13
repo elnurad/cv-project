@@ -40,27 +40,30 @@ function Work({ id, handleDeleteWorkItem }) {
     <div className="work-container">
       {displayWorkInfo
         ? (
-          <div>
-            <p>
-              Company Name:
-              {companyName}
-            </p>
-            <p>
-              Position:
-              {position}
-            </p>
-            <p>
-              From:
-              {timeFrom}
-            </p>
-            <p>
-              To:
-              {timeTo}
-            </p>
-            <p>
-              Description:
-              {jobDescription}
-            </p>
+          <div className="work-information">
+            <div className="saved-work-details">
+              <div className="saved-work-item-title">
+                <p>Company Name:</p>
+                <p>Position:</p>
+                <p>From:</p>
+                <p>To:</p>
+              </div>
+
+              <div className="saved-work-item-info">
+                <p>{companyName}</p>
+                <p>{position}</p>
+                <p>{timeFrom}</p>
+                <p>{timeTo}</p>
+              </div>
+            </div>
+            <div className="job-description">
+              <p className="job-description-title">
+                Description:
+              </p>
+              <p className="job-description-body">
+                {jobDescription}
+              </p>
+            </div>
           </div>
         )
         : (

@@ -5,7 +5,6 @@ import './styles/App.css';
 import Education from './components/Education';
 import Work from './components/Work';
 import Name from './components/Name';
-import Skills from './components/Skills';
 
 function App() {
   const [eduId, setEduId] = useState([]);
@@ -53,17 +52,12 @@ function App() {
         <div>
           {renderWorkComponents}
         </div>
-        <button onClick={addWorkComp}>
+        <button className="add-new" onClick={addWorkComp}>
           add new
         </button>
         <h4>Education</h4>
         <div>{renderEducationComponents}</div>
-        <button onClick={addEducationComp}>add new</button>
-
-        <h4>Skills</h4>
-
-        <Skills />
-
+        <button className="add-new" onClick={addEducationComp}>add new</button>
       </div>
     </div>
   );
