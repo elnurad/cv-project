@@ -13,3 +13,17 @@
 .school-duration input {
     width: 15em;
 }
+.saved-education-details {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+    line-height: 0.4em;
+    margin-left: 3em;
+}
+.saved-education-details-title {
+    text-align: left;
+    font-weight: bold;
+}
+.saved-education-details-info {
+    text-align: left;
+}

@@ -40,32 +40,41 @@ function Education({ id, handleDeleteEduItem }) {
     <div className="education-section">
       {displayEducationSection
         ? (
-          <div>
-            <p>
-              School Name:
-              {' '}
-              {schoolName}
-            </p>
-            <p>
-              Major:
-              {' '}
-              {major}
-            </p>
-            <p>
-              from:
-              {' '}
-              {studyFrom}
-            </p>
-            <p>
-              to:
-              {' '}
-              {studyTo}
-            </p>
-            <p>
-              Degree:
-              {' '}
-              {degree}
-            </p>
+          <div className="saved-education-details">
+            <div className="saved-education-details-title">
+              <p>
+                School Name:
+              </p>
+              <p>
+                Major:
+              </p>
+              <p>
+                From:
+              </p>
+              <p>
+                To:
+              </p>
+              <p>
+                Degree:
+              </p>
+            </div>
+            <div className="saved-education-details-info">
+              <p>
+                {schoolName}
+              </p>
+              <p>
+                {major}
+              </p>
+              <p>
+                {studyFrom}
+              </p>
+              <p>
+                {studyTo}
+              </p>
+              <p>
+                {degree}
+              </p>
+            </div>
           </div>
         )
         : (
@@ -73,19 +82,19 @@ function Education({ id, handleDeleteEduItem }) {
             <label>
               School Name:
               <div className="school-name">
-                <input value={schoolName} onChange={changeSchoolName} />
+                <input required placeholder="type your school name" value={schoolName} onChange={changeSchoolName} />
               </div>
             </label>
             <label>
               Major:
               <div className="school-major">
-                <input value={major} onChange={changeMajor} />
+                <input placeholder="type your major" value={major} onChange={changeMajor} />
               </div>
             </label>
             <label>
               Degree:
               <div className="degree-input">
-                <input value={degree} onChange={changeDegree} />
+                <input placeholder="type your degree" value={degree} onChange={changeDegree} />
               </div>
             </label>
             <div className="school-duration">

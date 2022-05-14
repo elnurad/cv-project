@@ -41,7 +41,7 @@ function Name() {
   };
 
   return (
-    <div>
+    <div className="personal-details-section">
       {displayPersonalDetails
         ? (
           <div className="saved-personal-details">
@@ -72,7 +72,7 @@ function Name() {
               <div className="nameAndRole">
                 <label>
                   First Name:
-                  <div className="nameInput">
+                  <div className="name-input">
                     <input value={firstName} onChange={handleFirstNameOnChange} />
                   </div>
                 </label>
