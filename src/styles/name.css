@@ -27,3 +27,23 @@
 .saved-personal-item-info {
     text-align:left
 }
+
+
+@media (max-width: 600px ) {
+    .name {
+        display: flex;
+        flex-direction: column;    
+    
+    }
+    .saved-personal-details {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        line-height: 0.4em;
+        margin-left: 3em;
+       
+    }
+
+
+
+}
