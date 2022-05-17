@@ -75,7 +75,11 @@ button {
     border: 1px solid #3D6A7D;
     margin-left: 2em;
     margin-right: 2em;
+    background-color: #f0f5f7;
    
+}
+button:hover {
+    background-color: #7093a1;
 }
 .add-new {
     margin-top: 2em;

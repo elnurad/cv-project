@@ -5,12 +5,12 @@ import React, { useState } from 'react';
 import '../styles/name.css';
 
 function Name() {
-  const [firstName, setFirstName] = useState('First Name');
-  const [lastName, setLastName] = useState('Last Name');
-  const [currentRole, setCurrentRole] = useState('Current Role');
-  const [address, setAddress] = useState('Addres Line 1');
-  const [phoneNumber, setPhoneNumber] = useState('508-345-2233');
-  const [email, setEmail] = useState('johnsmith@email.com');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [currentRole, setCurrentRole] = useState('');
+  const [address, setAddress] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
   const [displayPersonalDetails, setPersonalDetails] = useState(false);
 
   const handleFirstNameOnChange = (e) => {
@@ -39,6 +39,10 @@ function Name() {
   const flipPersonalDetails = () => {
     setPersonalDetails(!displayPersonalDetails);
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    flipPersonalDetails();
+  };
 
   return (
     <div className="personal-details-section">
@@ -53,6 +57,7 @@ function Name() {
               <p>Address:</p>
               <p>Phone Number:</p>
               <p>Email:</p>
+              <button onClick={flipPersonalDetails}>edit</button>
             </div>
             <div className="saved-personal-item-info">
               <p>{firstName}</p>
@@ -67,26 +72,32 @@ function Name() {
         : (
           <div>
 
-            <form onSubmit={(e) => e.preventDefault()} className="name">
+            <form onSubmit={handleSubmit} className="name">
 
               <div className="nameAndRole">
                 <label>
                   First Name:
                   <div className="name-input">
-                    <input value={firstName} onChange={handleFirstNameOnChange} />
+                    <input
+                      type="text"
+                      placeholder="First Name"
+                      value={firstName}
+                      onChange={handleFirstNameOnChange}
+                      required
+                    />
                   </div>
                 </label>
                 <label>
 
                   Last Name:
                   <div className="name-input">
-                    <input value={lastName} onChange={handleLastNameOnChange} />
+                    <input placeholder="Last Name" value={lastName} onChange={handleLastNameOnChange} required />
                   </div>
                 </label>
                 <label>
                   Current Role:
                   <div className="name-input">
-                    <input value={currentRole} onChange={handleCurrentRole} />
+                    <input placeholder="Current Role" value={currentRole} onChange={handleCurrentRole} required />
                   </div>
                 </label>
               </div>
@@ -94,28 +105,29 @@ function Name() {
                 <label>
                   Address 1:
                   <div className="name-iInput">
-                    <input value={address} onChange={handleAddress} />
+                    <input placeholder="Type address" value={address} onChange={handleAddress} required />
                   </div>
                 </label>
                 <label>
                   Phone Number:
                   <div className="name-input">
-                    <input value={phoneNumber} onChange={handlePhoneNumber} />
+                    <input placeholder="Type phone number" value={phoneNumber} onChange={handlePhoneNumber} required />
                   </div>
                 </label>
                 <label>
                   E-mail:
                   <div className="name-input">
-                    <input value={email} onChange={handleEmail} />
+                    <input placeholder="Type email" value={email} onChange={handleEmail} required />
                   </div>
                 </label>
 
               </div>
+              <button type="submit">save</button>
+              {/* <button
+              onClick={flipPersonalDetails}>{displayPersonalDetails ? 'edit' : 'save'}</button> */}
             </form>
           </div>
         )}
-
-      <button onClick={flipPersonalDetails}>{displayPersonalDetails ? 'edit' : 'save'}</button>
     </div>
 
   );

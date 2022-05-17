@@ -72,13 +72,13 @@ function Work({ id, handleDeleteWorkItem }) {
               <label>
                 Company Name:
                 <div className="work-input">
-                  <input value={companyName} onChange={handleCompanyName} />
+                  <input placeholder="type company name" value={companyName} onChange={handleCompanyName} />
                 </div>
               </label>
               <label>
                 Position:
                 <div className="work-input">
-                  <input value={position} onChange={handlePosition} />
+                  <input placeholder="position" value={position} onChange={handlePosition} />
                 </div>
               </label>
             </div>
@@ -102,6 +102,7 @@ function Work({ id, handleDeleteWorkItem }) {
               Description:
               <div className="work-description">
                 <textarea
+                  placeholder="type job description"
                   value={jobDescription}
                   onChange={handleJobDescription}
                   rows={7}
