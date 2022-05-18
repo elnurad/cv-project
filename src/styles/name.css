@@ -4,6 +4,15 @@
 
 .name {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+
+}
+.form-input-container {
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 4em;   
@@ -12,11 +21,17 @@
 }
 .saved-personal-details {
     display: flex;
-    flex-direction: row;
-    gap: 3em;
+    flex-direction: column;
     line-height: 0.4em;
     margin-left: 3em;
+    margin-right: 3em;
    
+}
+.saved-personal-details-input-container {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+
 }
 
 .saved-personal-item-title {
@@ -37,12 +52,19 @@
     }
     .saved-personal-details {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 1em;
         line-height: 0.4em;
-        margin-left: 3em;
-       
+        margin-left: 3em;  
     }
+   .form-input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;   
+   }
+
 
 
 

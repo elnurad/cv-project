@@ -49,23 +49,26 @@ function Name() {
       {displayPersonalDetails
         ? (
           <div className="saved-personal-details">
-
-            <div className="saved-personal-item-title">
-              <p>First Name:</p>
-              <p>Last Name:</p>
-              <p>Current Role:</p>
-              <p>Address:</p>
-              <p>Phone Number:</p>
-              <p>Email:</p>
-              <button onClick={flipPersonalDetails}>edit</button>
+            <div className="saved-personal-details-input-container">
+              <div className="saved-personal-item-title">
+                <p>First Name:</p>
+                <p>Last Name:</p>
+                <p>Current Role:</p>
+                <p>Address:</p>
+                <p>Phone Number:</p>
+                <p>Email:</p>
+              </div>
+              <div className="saved-personal-item-info">
+                <p>{firstName}</p>
+                <p>{lastName}</p>
+                <p>{currentRole}</p>
+                <p>{address}</p>
+                <p>{phoneNumber}</p>
+                <p>{email}</p>
+              </div>
             </div>
-            <div className="saved-personal-item-info">
-              <p>{firstName}</p>
-              <p>{lastName}</p>
-              <p>{currentRole}</p>
-              <p>{address}</p>
-              <p>{phoneNumber}</p>
-              <p>{email}</p>
+            <div id="personal-details-edit">
+              <button onClick={flipPersonalDetails}>edit</button>
             </div>
           </div>
         )
@@ -73,58 +76,64 @@ function Name() {
           <div>
 
             <form onSubmit={handleSubmit} className="name">
+              <div className="form-input-container">
+                <div className="nameAndRole">
+                  <label>
+                    First Name:
+                    <div className="name-input">
+                      <input
+                        type="text"
+                        placeholder="First Name"
+                        value={firstName}
+                        onChange={handleFirstNameOnChange}
+                        required
+                      />
+                    </div>
+                  </label>
+                  <label>
 
-              <div className="nameAndRole">
-                <label>
-                  First Name:
-                  <div className="name-input">
-                    <input
-                      type="text"
-                      placeholder="First Name"
-                      value={firstName}
-                      onChange={handleFirstNameOnChange}
-                      required
-                    />
-                  </div>
-                </label>
-                <label>
+                    Last Name:
+                    <div className="name-input">
+                      <input placeholder="Last Name" value={lastName} onChange={handleLastNameOnChange} required />
+                    </div>
+                  </label>
+                  <label>
+                    Current Role:
+                    <div className="name-input">
+                      <input placeholder="Current Role" value={currentRole} onChange={handleCurrentRole} required />
+                    </div>
+                  </label>
+                </div>
+                <div className="address">
+                  <label>
+                    Address 1:
+                    <div className="name-iInput">
+                      <input placeholder="Type address" value={address} onChange={handleAddress} required />
+                    </div>
+                  </label>
+                  <label>
+                    Phone Number:
+                    <div className="name-input">
+                      <input
+                        placeholder="Type phone number"
+                        value={phoneNumber}
+                        onChange={handlePhoneNumber}
+                        type="tel"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        required
+                      />
+                    </div>
+                  </label>
+                  <label>
+                    E-mail:
+                    <div className="name-input">
+                      <input placeholder="type your email" type="email" value={email} onChange={handleEmail} required />
+                    </div>
+                  </label>
 
-                  Last Name:
-                  <div className="name-input">
-                    <input placeholder="Last Name" value={lastName} onChange={handleLastNameOnChange} required />
-                  </div>
-                </label>
-                <label>
-                  Current Role:
-                  <div className="name-input">
-                    <input placeholder="Current Role" value={currentRole} onChange={handleCurrentRole} required />
-                  </div>
-                </label>
-              </div>
-              <div className="address">
-                <label>
-                  Address 1:
-                  <div className="name-iInput">
-                    <input placeholder="Type address" value={address} onChange={handleAddress} required />
-                  </div>
-                </label>
-                <label>
-                  Phone Number:
-                  <div className="name-input">
-                    <input placeholder="Type phone number" value={phoneNumber} onChange={handlePhoneNumber} required />
-                  </div>
-                </label>
-                <label>
-                  E-mail:
-                  <div className="name-input">
-                    <input placeholder="Type email" value={email} onChange={handleEmail} required />
-                  </div>
-                </label>
-
+                </div>
               </div>
               <button type="submit">save</button>
-              {/* <button
-              onClick={flipPersonalDetails}>{displayPersonalDetails ? 'edit' : 'save'}</button> */}
             </form>
           </div>
         )}

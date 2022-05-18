@@ -36,6 +36,14 @@ function Work({ id, handleDeleteWorkItem }) {
     setWorkInfo(!displayWorkInfo);
   };
 
+  const handleSave = (e) => {
+    e.preventDefault();
+    flipWorkInfo();
+  };
+  const handleDeleteWorkInfo = () => {
+    handleDeleteWorkItem(id);
+  };
+
   return (
     <div className="work-container">
       {displayWorkInfo
@@ -64,21 +72,35 @@ function Work({ id, handleDeleteWorkItem }) {
                 {jobDescription}
               </p>
             </div>
+
+            <button onClick={flipWorkInfo}>edit</button>
           </div>
         )
         : (
-          <form onSubmit={(e) => e.preventDefault()} className="work-form">
+          <form onSubmit={handleSave} className="work-form">
             <div className="company">
               <label>
                 Company Name:
                 <div className="work-input">
-                  <input placeholder="type company name" value={companyName} onChange={handleCompanyName} />
+                  <input
+                    placeholder="type company name"
+                    value={companyName}
+                    onChange={handleCompanyName}
+                    type="text"
+                    required
+                  />
                 </div>
               </label>
               <label>
                 Position:
                 <div className="work-input">
-                  <input placeholder="position" value={position} onChange={handlePosition} />
+                  <input
+                    placeholder="position"
+                    value={position}
+                    onChange={handlePosition}
+                    type="text"
+                    required
+                  />
                 </div>
               </label>
             </div>
@@ -86,14 +108,24 @@ function Work({ id, handleDeleteWorkItem }) {
               <label>
                 From:
                 <div className="work-input">
-                  <input value={timeFrom} onChange={handleFrom} type="date" />
+                  <input
+                    value={timeFrom}
+                    onChange={handleFrom}
+                    type="date"
+                    required
+                  />
                 </div>
               </label>
 
               <label>
                 To:
                 <div className="work-input">
-                  <input value={timeTo} onChange={handleTo} type="date" />
+                  <input
+                    value={timeTo}
+                    onChange={handleTo}
+                    type="date"
+                    required
+                  />
                 </div>
               </label>
             </div>
@@ -107,15 +139,15 @@ function Work({ id, handleDeleteWorkItem }) {
                   onChange={handleJobDescription}
                   rows={7}
                   cols={50}
+                  type="text"
+                  required
                 />
               </div>
             </label>
-
+            <button type="submit">save</button>
           </form>
         )}
-
-      <button onClick={flipWorkInfo}>{displayWorkInfo ? 'edit' : 'save'}</button>
-      <button onClick={() => handleDeleteWorkItem(id)}>delete</button>
+      <button className="delete-button" onClick={handleDeleteWorkInfo}>delete</button>
 
     </div>
   );

@@ -36,85 +36,123 @@ function Education({ id, handleDeleteEduItem }) {
   const flipEducationSection = () => {
     setEducationSection(!displayEducationSection);
   };
+  const handleSaveEdu = (e) => {
+    e.preventDefault();
+    flipEducationSection();
+  };
+
   return (
     <div className="education-section">
       {displayEducationSection
         ? (
-          <div className="saved-education-details">
-            <div className="saved-education-details-title">
-              <p>
-                School Name:
-              </p>
-              <p>
-                Major:
-              </p>
-              <p>
-                From:
-              </p>
-              <p>
-                To:
-              </p>
-              <p>
-                Degree:
-              </p>
+          <div className="saved-education-details-container">
+            <div className="saved-education-details">
+              <div className="saved-education-details-title">
+                <p>
+                  School Name:
+                </p>
+                <p>
+                  Major:
+                </p>
+                <p>
+                  From:
+                </p>
+                <p>
+                  To:
+                </p>
+                <p>
+                  Degree:
+                </p>
+              </div>
+              <div className="saved-education-details-info">
+                <p>
+                  {schoolName}
+                </p>
+                <p>
+                  {major}
+                </p>
+                <p>
+                  {studyFrom}
+                </p>
+                <p>
+                  {studyTo}
+                </p>
+                <p>
+                  {degree}
+                </p>
+              </div>
             </div>
-            <div className="saved-education-details-info">
-              <p>
-                {schoolName}
-              </p>
-              <p>
-                {major}
-              </p>
-              <p>
-                {studyFrom}
-              </p>
-              <p>
-                {studyTo}
-              </p>
-              <p>
-                {degree}
-              </p>
+            <div id="education-edit-button">
+              <button type="button" onClick={flipEducationSection}>edit</button>
             </div>
           </div>
         )
         : (
-          <form onSubmit={(e) => e.preventDefault()} className="education-form">
+          <form onSubmit={handleSaveEdu} className="education-form">
             <label>
               School Name:
               <div className="school-name">
-                <input required placeholder="type your school name" value={schoolName} onChange={changeSchoolName} />
+                <input
+                  placeholder="type your school name"
+                  value={schoolName}
+                  onChange={changeSchoolName}
+                  type="text"
+                  required
+                />
               </div>
             </label>
             <label>
               Major:
               <div className="school-major">
-                <input placeholder="type your major" value={major} onChange={changeMajor} />
+                <input
+                  placeholder="type your major"
+                  value={major}
+                  onChange={changeMajor}
+                  required
+                  type="text"
+                />
               </div>
             </label>
             <label>
               Degree:
               <div className="degree-input">
-                <input placeholder="type your degree" value={degree} onChange={changeDegree} />
+                <input
+                  placeholder="type your degree"
+                  value={degree}
+                  onChange={changeDegree}
+                  required
+                  type="text"
+                />
               </div>
             </label>
             <div className="school-duration">
               <label>
                 From:
                 <div className="education-input">
-                  <input type="date" value={studyFrom} onChange={changeStudyFrom} />
+                  <input
+                    type="date"
+                    value={studyFrom}
+                    onChange={changeStudyFrom}
+                    required
+                  />
                 </div>
               </label>
               <label>
                 To:
                 <div className="education-input">
-                  <input type="date" value={studyTo} onChange={changeStudyTo} />
+                  <input
+                    type="date"
+                    value={studyTo}
+                    onChange={changeStudyTo}
+                    required
+                  />
                 </div>
               </label>
             </div>
+            <button type="submit">save</button>
           </form>
         )}
-      <button onClick={flipEducationSection}>{displayEducationSection ? 'edit' : 'save'}</button>
-      <button onClick={handleDeleteItem}>delete</button>
+      <button className="delete-button" onClick={handleDeleteItem}>delete</button>
     </div>
   );
 }

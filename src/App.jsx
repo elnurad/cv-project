@@ -52,12 +52,12 @@ function App() {
         <div>
           {renderWorkComponents}
         </div>
-        <button className="add-new" onClick={addWorkComp}>
+        <button className="add-new-button" onClick={addWorkComp}>
           add new
         </button>
         <h4>Education</h4>
         <div>{renderEducationComponents}</div>
-        <button className="add-new" onClick={addEducationComp}>add new</button>
+        <button className="add-new-button" onClick={addEducationComp}>add new</button>
       </div>
     </div>
   );
