@@ -27,15 +27,6 @@
 
 }
 
-.job-description {
-    text-align: left;
-    margin-left: 3em;
-    margin-right: 3em;
-}
-.job-description-title {
-    font-weight: bold;
-}
-
 
 @media (max-width: 600px ) {
     .company, .work-duration {
@@ -45,17 +36,15 @@
         align-items: center;
         gap: 0;
     }
-
+ 
     .saved-work-details {
         display: flex;
         flex-direction: row;
         gap: 1em;
         line-height: 0.4em;
-        margin-left: 3em;
-        margin-right: 3em;
-    }
-    textarea {
-        width: 80vw;
-    }
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+     } 
+   
     
-}
+ }

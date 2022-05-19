@@ -55,8 +55,19 @@
         flex-direction: column;
         gap: 1em;
         line-height: 0.4em;
-        margin-left: 3em;  
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+       
     }
+    .saved-personal-details-input-container {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+
+    } 
+    .saved-personal-item-info {
+        margin-left: 1em;
+    } 
    .form-input-container {
     display: flex;
     flex-direction: column;

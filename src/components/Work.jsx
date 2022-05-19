@@ -9,7 +9,6 @@ function Work({ id, handleDeleteWorkItem }) {
   const [position, setPosition] = useState('');
   const [timeFrom, setTimeFrom] = useState('');
   const [timeTo, setTimeTo] = useState('');
-  const [jobDescription, setJobDescription] = useState('');
   const [displayWorkInfo, setWorkInfo] = useState(false);
 
   const handleCompanyName = (e) => {
@@ -26,10 +25,6 @@ function Work({ id, handleDeleteWorkItem }) {
 
   const handleTo = (e) => {
     setTimeTo(e.target.value);
-  };
-
-  const handleJobDescription = (e) => {
-    setJobDescription(e.target.value);
   };
 
   const flipWorkInfo = () => {
@@ -64,14 +59,6 @@ function Work({ id, handleDeleteWorkItem }) {
                 <p>{timeTo}</p>
               </div>
             </div>
-            <div className="job-description">
-              <p className="job-description-title">
-                Description:
-              </p>
-              <p className="job-description-body">
-                {jobDescription}
-              </p>
-            </div>
 
             <button onClick={flipWorkInfo}>edit</button>
           </div>
@@ -83,7 +70,7 @@ function Work({ id, handleDeleteWorkItem }) {
                 Company Name:
                 <div className="work-input">
                   <input
-                    placeholder="type company name"
+                    placeholder="Type company name"
                     value={companyName}
                     onChange={handleCompanyName}
                     type="text"
@@ -95,7 +82,7 @@ function Work({ id, handleDeleteWorkItem }) {
                 Position:
                 <div className="work-input">
                   <input
-                    placeholder="position"
+                    placeholder="Position"
                     value={position}
                     onChange={handlePosition}
                     type="text"
@@ -129,26 +116,10 @@ function Work({ id, handleDeleteWorkItem }) {
                 </div>
               </label>
             </div>
-
-            <label>
-              Description:
-              <div className="work-description">
-                <textarea
-                  placeholder="type job description"
-                  value={jobDescription}
-                  onChange={handleJobDescription}
-                  rows={7}
-                  cols={50}
-                  type="text"
-                  required
-                />
-              </div>
-            </label>
             <button type="submit">save</button>
+            <button className="delete-button" onClick={handleDeleteWorkInfo}>delete</button>
           </form>
         )}
-      <button className="delete-button" onClick={handleDeleteWorkInfo}>delete</button>
-
     </div>
   );
 }

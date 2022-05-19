@@ -106,7 +106,7 @@ function Name() {
                 </div>
                 <div className="address">
                   <label>
-                    Address 1:
+                    Address:
                     <div className="name-iInput">
                       <input placeholder="Type address" value={address} onChange={handleAddress} required />
                     </div>
@@ -115,7 +115,7 @@ function Name() {
                     Phone Number:
                     <div className="name-input">
                       <input
-                        placeholder="Type phone number"
+                        placeholder="123-345-6890"
                         value={phoneNumber}
                         onChange={handlePhoneNumber}
                         type="tel"
@@ -127,7 +127,7 @@ function Name() {
                   <label>
                     E-mail:
                     <div className="name-input">
-                      <input placeholder="type your email" type="email" value={email} onChange={handleEmail} required />
+                      <input placeholder="Type your email" type="email" value={email} onChange={handleEmail} required />
                     </div>
                   </label>
 

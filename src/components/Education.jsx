@@ -93,7 +93,7 @@ function Education({ id, handleDeleteEduItem }) {
               School Name:
               <div className="school-name">
                 <input
-                  placeholder="type your school name"
+                  placeholder="Type your school name"
                   value={schoolName}
                   onChange={changeSchoolName}
                   type="text"
@@ -105,7 +105,7 @@ function Education({ id, handleDeleteEduItem }) {
               Major:
               <div className="school-major">
                 <input
-                  placeholder="type your major"
+                  placeholder="Type your major"
                   value={major}
                   onChange={changeMajor}
                   required
@@ -117,7 +117,7 @@ function Education({ id, handleDeleteEduItem }) {
               Degree:
               <div className="degree-input">
                 <input
-                  placeholder="type your degree"
+                  placeholder="Type your degree"
                   value={degree}
                   onChange={changeDegree}
                   required
@@ -150,9 +150,9 @@ function Education({ id, handleDeleteEduItem }) {
               </label>
             </div>
             <button type="submit">save</button>
+            <button className="delete-button" onClick={handleDeleteItem}>delete</button>
           </form>
         )}
-      <button className="delete-button" onClick={handleDeleteItem}>delete</button>
     </div>
   );
 }
